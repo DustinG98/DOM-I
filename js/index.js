@@ -101,6 +101,19 @@ let newATag2 = document.createElement("a");
 newATag2.textContent = "Home";
 nav.prepend(newATag2)
 
+let footer = document.querySelector("footer");
+
+let btnFunc = function(){
+  footerContent.textContent = newCopyright;
+}
+
+let newBtn = document.createElement("button");
+newBtn.textContent = "CLICK ME!!!";
+footer.appendChild(newBtn)
+newBtn.addEventListener("click", btnFunc)
+
+let newCopyright = "NEW COPYRIGHT HEHEHE";
+
 
 
 
