@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM <br />Is <br /> Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -60,7 +60,7 @@ navATags.forEach((cV, i) => (cV.style.color = "green"));
 
 
 let ctaText = document.querySelector(".cta-text h1");
-ctaText.textContent = siteContent["cta"]["h1"];
+ctaText.innerHTML = siteContent["cta"]["h1"];
 let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 let ctaBtn = document.querySelector(".cta-text button")
