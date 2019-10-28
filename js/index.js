@@ -42,18 +42,21 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 let navATags = document.querySelectorAll("nav a");
-navATags[0].style.color="green";
-navATags[0].textContent = siteContent["nav"]["nav-item-1"];
-navATags[1].textContent = siteContent["nav"]["nav-item-2"];
-navATags[1].style.color="green";
-navATags[2].textContent = siteContent["nav"]["nav-item-3"];
-navATags[2].style.color="green";
-navATags[3].textContent = siteContent["nav"]["nav-item-4"];
-navATags[3].style.color="green";
-navATags[4].textContent = siteContent["nav"]["nav-item-5"];
-navATags[4].style.color="green";
-navATags[5].textContent = siteContent["nav"]["nav-item-6"];
-navATags[5].style.color="green";
+
+navATags.forEach((cV, i) => (cV.textContent = Object.values(siteContent.nav)[i]));
+navATags.forEach((cV, i) => (cV.style.color = "green"));
+// navATags[0].style.color="green";
+// navATags[0].textContent = siteContent["nav"]["nav-item-1"];
+// navATags[1].textContent = siteContent["nav"]["nav-item-2"];
+// navATags[1].style.color="green";
+// navATags[2].textContent = siteContent["nav"]["nav-item-3"];
+// navATags[2].style.color="green";
+// navATags[3].textContent = siteContent["nav"]["nav-item-4"];
+// navATags[3].style.color="green";
+// navATags[4].textContent = siteContent["nav"]["nav-item-5"];
+// navATags[4].style.color="green";
+// navATags[5].textContent = siteContent["nav"]["nav-item-6"];
+// navATags[5].style.color="green";
 
 
 let ctaText = document.querySelector(".cta-text h1");
@@ -62,7 +65,6 @@ let ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
 let ctaBtn = document.querySelector(".cta-text button")
 ctaBtn.textContent = siteContent["cta"]["button"];
-
 
 let mainHeaders = document.querySelectorAll(".main-content h4");
 mainHeaders[0].textContent = siteContent["main-content"]["features-h4"]
