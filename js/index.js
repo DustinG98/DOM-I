@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM <br />Is <br /> Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -39,4 +39,83 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+let navATags = document.querySelectorAll("nav a");
+
+navATags.forEach((cV, i) => (cV.textContent = Object.values(siteContent.nav)[i]));
+navATags.forEach((cV, i) => (cV.style.color = "green"));
+// navATags[0].style.color="green";
+// navATags[0].textContent = siteContent["nav"]["nav-item-1"];
+// navATags[1].textContent = siteContent["nav"]["nav-item-2"];
+// navATags[1].style.color="green";
+// navATags[2].textContent = siteContent["nav"]["nav-item-3"];
+// navATags[2].style.color="green";
+// navATags[3].textContent = siteContent["nav"]["nav-item-4"];
+// navATags[3].style.color="green";
+// navATags[4].textContent = siteContent["nav"]["nav-item-5"];
+// navATags[4].style.color="green";
+// navATags[5].textContent = siteContent["nav"]["nav-item-6"];
+// navATags[5].style.color="green";
+
+
+let ctaText = document.querySelector(".cta-text h1");
+ctaText.innerHTML = siteContent["cta"]["h1"];
+let ctaImg = document.getElementById("cta-img");
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
+let ctaBtn = document.querySelector(".cta-text button")
+ctaBtn.textContent = siteContent["cta"]["button"];
+
+let mainHeaders = document.querySelectorAll(".main-content h4");
+mainHeaders[0].textContent = siteContent["main-content"]["features-h4"]
+mainHeaders[1].textContent = siteContent["main-content"]["about-h4"]
+mainHeaders[2].textContent = siteContent["main-content"]["services-h4"]
+mainHeaders[3].textContent = siteContent["main-content"]["product-h4"]
+mainHeaders[4].textContent = siteContent["main-content"]["vision-h4"]
+
+let mainContent = document.querySelectorAll(".main-content p");
+mainContent[0].textContent = siteContent["main-content"]["features-content"]
+mainContent[1].textContent = siteContent["main-content"]["about-content"]
+mainContent[2].textContent = siteContent["main-content"]["services-content"]
+mainContent[3].textContent = siteContent["main-content"]["product-content"]
+mainContent[4].textContent = siteContent["main-content"]["vision-content"]
+
+let mainImg = document.querySelector("#middle-img");
+mainImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+let contactH4 = document.querySelector(".contact h4");
+contactH4.textContent = siteContent["contact"]["contact-h4"];
+let contactContent = document.querySelectorAll(".contact p");
+contactContent[0].textContent = siteContent["contact"]["address"];
+contactContent[1].textContent = siteContent["contact"]["phone"];
+contactContent[2].textContent = siteContent["contact"]["email"];
+
+let footerContent = document.querySelector("footer p");
+footerContent.textContent = siteContent["footer"]["copyright"];
+
+let nav = document.querySelector("nav")
+
+let newATag1 = document.createElement("a");
+newATag1.textContent = "SIGN IN";
+nav.appendChild(newATag1)
+
+let newATag2 = document.createElement("a");
+newATag2.textContent = "Home";
+nav.prepend(newATag2)
+
+let footer = document.querySelector("footer");
+
+let btnFunc = function(){
+  footerContent.textContent = newCopyright;
+}
+
+let newBtn = document.createElement("button");
+newBtn.textContent = "CLICK ME!!!";
+footer.appendChild(newBtn)
+newBtn.addEventListener("click", btnFunc)
+
+let newCopyright = "NEW COPYRIGHT HEHEHE";
+
+
+
+
